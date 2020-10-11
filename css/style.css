@@ -1,0 +1,100 @@
+.navbar-item:hover {
+  text-decoration: underline;
+  background: rgba(0, 0, 0, 0.2 ) !important;
+}
+
+.tile.is-child.box {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.column.is-4.is-offset-4 {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+table {
+  border-color: white !important;
+}
+
+
+
+th {
+  color: white !important;
+  /* padding: 5px 5px 5px 5px !important; */
+}
+
+td {
+  /* padding: 5px 5px 5px 5px !important; */
+}
+
+.hero.is-danger.is-fullheight {
+  background: url('../img/fire-975703_960_720.jpg') center center no-repeat;
+  background-size: cover !important;
+}
+
+.navbar-item {
+  background: none !important;
+}
+
+#span {
+  padding-top: 15% !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  padding-bottom:  15% !important;
+}
+
+.label  {
+  color: white !important;
+}
+
+.navbar-item.is-active {
+  background: rgba(0, 0, 0, 0.2 ) !important;
+}
+
+.hero.is-dark.is-fullheight {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    ),url('https://images8.alphacoders.com/407/407198.jpg') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.column.is-8.is-offset-2 {
+  position: relative;
+  top: -50px;
+}
+
+footer > div > h1 {
+  color: white !important;
+}
+
+h2 {
+  color: white !important;
+}
+
+.footer {
+  background:hsl(141, 71%, 48%);
+  color: white !important;
+}
+
+.kontak {
+  line-height: 0;
+}
+
+.navbar-burger burger {
+  background: black !important;
+}
+
+.button.is-dark.is-large.is-rounded:hover {
+  background: whitesmoke !important;
+  color: black !important;
+}
+
+.button.is-normal.is-info:hover {
+  background: whitesmoke !important;
+  color: black !important;
+}
+
+.hero.is-dark.is-medium{
+  background: black !important;
+}

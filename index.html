@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1"/>
+    <link rel="icon" type="img/x-icon" href="img/converter-512.png"/>
+    <link rel="stylesheet" href="css/bulma.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Login Page -->
+      <section class="hero is-danger is-fullheight" id="form">
+      <div class="hero-body">
+        <div class="tile is-ancestor">
+          <div class="tile is-6 is-parent">
+            <div class="columns">
+              <div class="column is-8 is-offset-one-quarter is-half">
+                <div class="tile is-child box">
+                  <div id="span">
+                    <form class="form" onsubmit="return false">
+                      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                      <div class="field">
+                        <label class="label is-large has-text-centered">Name</label>
+                        <div class="control">
+                          <input type="text" id="nama" class="input is-large" placeholder="Type Your Name"><br><br>
+                          <button id="submit" onclick="sub()" type="submit" class="button is-dark is-large" style="width: 100% !important;" name="button">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="column is-8 is-offset-one-fifth is-half">
+                <h1 class="title is-1">Currency Converter</h1>
+                <h2 class="subtitle is-size-4">Anda bisa mengkonversi mata uang di website ini, pastika anda menulis nama terlebih dahulu</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Website -->
+    <div class="is-hidden" id="home">
+      <section class="hero is-dark is-fullheight">
+        <div class="hero-head">
+          <header class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a href="#" class="navbar-item">
+                  <h1 class="title is-4">Currency Converter</h1>
+                </a>
+                <span class="navbar-burger burger" data-target="collapse">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="collapse" class="navbar-menu">
+                <div class="navbar-end">
+                  <a href="#" class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a href="#" class="navbar-item" id="na">
+                    My Profile
+                  </a>
+                  <a href="#contact" class="navbar-item">
+                    Contact
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div class="hero-body" id="page">
+          <div class="container has-text-centered">
+            <div class="column is-8 is-offset-2">
+              <h1 class="title is-size-1">Cek Kurs Rupiah Sekarang Ini</h1>
+              <a href="#" class="button is-dark is-large is-rounded" id="cek">Cek Kurs</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-body is-hidden" id="app">
+          <div class="container">
+            <div class="columns">
+              <div class="column is-4 is-offset-4">
+                <div id="span">
+                  <form class="form" onsubmit="return false">
+                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                    <div class="field">
+                      <label class="label is-large has-text-centered">Currency Converter</label>
+                      <div class="columns">
+                        <div class="column is-half">
+                          <div class="control" style="width: 100% !important;">
+                            <div class="field">
+                              <div class="control" style="width:100% !important;">
+                                <div class="select is-normal" style="width:100% !important;">
+                                  <select id="str"  style="width:100% !important;">
+                                    <option style="width:100% !important;" value="USD"  id="str">USD</option>
+                                    <option style="width:100% !important;" value="SGD"  id="str">SGD</option>
+                                    <option style="width:100% !important;" value="EUR"  id="str">EUR</option>
+                                    <option style="width:100% !important;" value="CAD"  id="str">CAD</option>
+                                    <option style="width:100% !important;" value="IDR"  id="str">IDR</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column is-half">
+                          <div class="control" style="width: 100% !important;">
+                            <div class="field">
+                              <div class="control">
+                                <input type="number" id="uang" class="input is-normal" placeholder="1000">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column is-half">
+                          <div class="control" style="width: 100% !important;">
+                            <div class="field">
+                              <div class="control" style="width:100% !important;">
+                                <div class="select is-normal" style="width:100% !important;">
+                                  <select id="str2"  style="width:100% !important;">
+                                    <option style="width:100% !important;" value="IDR"  id="str2">IDR</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column is-half">
+                          <div class="control" style="width: 100% !important;">
+                            <div class="field">
+                              <div class="control">
+                                <input type="number" id="hasil" class="input is-normal" placeholder="1000"><br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" id="sbm" onclick="hitung()" class="button is-normal is-info" style="width: 100% !important;" name="button">Cek Kurs</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section class="hero is-dark is-medium">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-centered">Tentang Kami</h1>
+            <div class="columns">
+              <div class="column is-half">
+                <p class="subtitle is-size-5">Currency Converter adalah aplikasi berbasis web yang dikembangkan oleh seorang software engineer bernama <i>Mathius Kormasela</i> dan design advisor oleh <i>Fadhly Fadhilah</i> dalam rangka untuk menyelesaikan permasalahan pertukaran kurs dollar dengan rupiah. Aplikasi web ini di bangun juga bertujuan untuk mengembangkan skill pembuatnya itu sendiri. Aplikasi ini di bangun dalam rentan waktu sekita tiga hari dengan script-script yang membingungkan.</p>
+              </div>
+              <div class="column is-half">
+                <p class="subtitle is-size-5">Aplikasi web ini dibangun dengan menggunakan HTML5, CSS3, Bulma Framework, JavaScript dan Jquery. Aplikasi ini dilengkapi dengan fitur cek kurs yang berguna untuk melihat harga rupiah dengan mata uang yang lainnya. Selain itu aplikasi ini juga menyertakan fitur untuk mengkonversi nilai rupiah ke nilai dollar maupun sebaliknya yang merupakan fitur utama pada aplikasi ini.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero is-white is-medium" style="background: whitesmoke !important;" id="contact">
+        <div class="hero-body">
+          <div class="container has-text-centered"  style="line-height: -5px !important;">
+            <h1 class="title">Kontak</h1>
+            <h2 class="subtitle is-size-5" style="color: black !important;"><b>Alamat:</b></h2>
+            <p class="subtitle is-size-6 kontak">Jl. Annur Rt/RW: 13/07</p>
+            <p class="subtitle is-size-6 kontak" style="line-height: 20px !important;">Kota Jakarta Utara, Kec. Koja Kel. Tugu Selatan</p>
+            <h2 class="title is-5" style="color:black !important; line-height:50px !important;">No.Telp:</h2>
+            <p class="subtitle is-size-6">081291592432</p>
+            <h2 class="title is-5" style="color:black !important; line-height:50px !important;">Email</h2>
+            <p class="subtitle is-size-6">mathiuskormasela12rpl@gmail.com</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <h1 class="title is-3" style="line-height: 60px !important;">Currency Converter</h1>
+        <p> &copy; All Rights Reserved 2018</p>
+        <p>Web Developer  : Mathius Kormasela</p>
+        <p>Design Advisor : Fadhly Fadilah</p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
